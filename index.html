@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <title>Modern Store</title>
+</head>
+<body class="bg-[#1E1E1E] text-white">
+
+    <!-- Navbar -->
+    <nav class="bg-[#292A2D] p-4 shadow-lg">
+      <div class="container max-w-6xl mx-auto flex flex-col sm:flex-row gap-8 items-center">
+        
+        <!-- Search -->
+        <div class="relative w-full">
+          <input
+            type="text"
+            id="search"
+            class="bg-[#33363A] text-white rounded-full p-2 pl-10 w-full focus:ring-2 focus:ring-[#007AFF] focus:outline-none transition"
+            placeholder="Search products..."
+          />
+          <svg
+            class="absolute left-2 top-1/2 -translate-y-1/2 text-gray-400"
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            stroke-width="2"
+            stroke="currentColor"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" />
+            <path d="M21 21l-6 -6" />
+          </svg>
+        </div>
+
+        <!-- Cart -->
+        <button id="cart-button" class="relative bg-[#007AFF] text-white px-4 py-2 rounded-lg shadow-lg hover:bg-[#005ecb] transition">
+          Cart
+          <small
+            id="cart-count"
+            class="bg-red-500 w-5 h-5 text-sm font-bold absolute -top-2 -right-2 rounded-full flex items-center justify-center shadow-lg"
+          >0</small>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Main -->
+    <main class="flex flex-col md:flex-row container mx-auto max-w-6xl">
+      
+      <!-- Filters -->
+      <div class="space-y-4 p-2 w-full md:max-w-[12rem]">
+        <h2 class="text-2xl font-semibold">Filters</h2>
+        <h3 class="text-xl font-medium mb-2">Category</h3>
+        <div id="filters-container" class="text-lg space-y-3">
+          <label class="flex items-center space-x-2">
+            <input type="checkbox" class="check" id="cameras" class="mr-2">
+            <span>Cameras</span>
+          </label>
+          <label class="flex items-center space-x-2">
+            <input type="checkbox" class="check" id="smartphones">
+            <span>Smartphones</span>
+          </label>
+          <label class="flex items-center space-x-2">
+            <input type="checkbox" class="check" id="games">
+            <span>Games</span>
+          </label>
+          <label class="flex items-center space-x-2">
+            <input type="checkbox" class="check" id="televisions">
+            <span>Televisions</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Products -->
+      <div id="products-wrapper" class="w-full max-w-4xl mx-auto grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-4 gap-6 p-4"></div>
+      
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
